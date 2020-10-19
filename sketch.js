@@ -124,9 +124,7 @@ function draw() {
 
     }
     
-    if (mousePressedOver(restart)) {
-    reset();
-  }
+  
 
   } else if (gameState === END) {
     gameOver.visible = true;
@@ -135,7 +133,9 @@ function draw() {
     //change the trex animation
     trex.changeAnimation("collided", trex_collided);
 
-
+  if (mousePressedOver(restart)) {
+    reset();
+  }
 
     ground.velocityX = 0;
     trex.velocityY = 0
@@ -222,7 +222,7 @@ function spawnClouds() {
     //adjust the depth
     cloud.depth = trex.depth;
     trex.depth = trex.depth + 1;
-
+console.log("hello");
     //add each cloud to the group
     cloudsGroup.add(cloud);
   }
