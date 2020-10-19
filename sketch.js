@@ -79,7 +79,7 @@ function setup() {
 
 function draw() {
 
-  background(180);
+  background(0);
   //displaying score
   text("Score: " + score, 500, 50);
 
@@ -123,6 +123,11 @@ function draw() {
       dieSound.play()
 
     }
+    
+    if (mousePressedOver(restart)) {
+    reset();
+  }
+
   } else if (gameState === END) {
     gameOver.visible = true;
     restart.visible = true;
@@ -148,10 +153,7 @@ function draw() {
   //stop trex from falling down
   trex.collide(invisibleGround);
 
-  if (mousePressedOver(restart)) {
-    reset();
-  }
-
+  
 
   drawSprites();
 }
